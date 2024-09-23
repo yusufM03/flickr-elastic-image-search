@@ -70,15 +70,15 @@ Powershell running command :Ensure the put the full path of the files
 # Now u can use docker compose for more structured task to run multiple containers .
 
 Run    `docker-compose up`
-repeat step 4,5 
-Start Logstash When Needed to inject new data:
-  
+To Repeat step 4,5 :
+Start **Logstash** When Needed to inject new data:
+RUN:
   `docker-compose --profile logstash up`
 
+# Build search interface based on text (tags)
 
- 
+`pip install Flask`
+`pip install elasticsearch`
+RUN:
 
-#Build search interface based on text (tags)
-
-pip install Flask
-pip install elasticsearch
+`python app.py`
