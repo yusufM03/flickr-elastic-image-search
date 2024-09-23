@@ -36,6 +36,8 @@
                         const id = hit._source.id;
                         const flickrSecret = hit._source.flickr_secret;
                         const imageUrl = `http://farm${flickrFarm}.staticflickr.com/${flickrServer}/${id}_${flickrSecret}.jpg`;
+                        console.log(imageUrl);
+                  
 
                         const img = document.createElement('img');
                         img.src = imageUrl;
