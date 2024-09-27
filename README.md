@@ -9,14 +9,13 @@ This project sets up a development environment for searching images from the Fli
 - Basic knowledge of Docker commands
 
 
-## Setup Instructions
+## Setup Instructions 
 
 1. **Create a Docker Network**
    
    Create a dedicated Docker network for Elasticsearch and Kibana:
 
    `docker network create elastic`
-   `
 
 2. **Run Elasticsearch**
 
@@ -56,24 +55,18 @@ This project sets up a development environment for searching images from the Fli
 
    Run Logstash with the following command, ensuring to mount your configuration and data files:
 
-Powershell running command :Ensure the put the full path of the files 
-    docker run --rm -it  --net elastic  `
->>   -v C:\Users\youss\OneDrive\Bureau\flickr-elastic-image-search\logstash.conf:/usr/share/logstash/pipeline/logstash.conf `
->>   -v C:\Users\youss\OneDrive\Bureau\flickr-elastic-image-search\data.csv:/usr/share/logstash/data/data.csv `
->>  docker.elastic.co/logstash/logstash:8.15.1
+* Powershell running command :**Ensure the put the full path of the files** :
+
+    `docker run --rm -it  --net elastic -v C:\Users\youss\OneDrive\Bureau\flickr-elastic-image-search\logstash.conf:/usr/share/logstash/pipeline/logstash.conf -v C:\Users\youss\OneDrive\Bureau\flickr-elastic-image-search\data.csv:/usr/share/logstash/data/data.csv docker.elastic.co/logstash/logstash:8.15.1`
 
 
-
-   This command will parse your CSV file and inject the data into the `yfcc100m` index in Elasticsearch.
+This command will parse your CSV file and inject the data into the `data` index in Elasticsearch.
 
 
 # Now u can use docker compose for more structured task to run multiple containers .
 
-Run    `docker-compose up`
-To Repeat step 4,5 :
-Start **Logstash** When Needed to inject new data:
-RUN:
-  `docker-compose --profile logstash up`
+Run   
+`docker-compose up`
 
 # Build search interface based on text (tags)
 
