@@ -1,5 +1,5 @@
 
-# Flickr Elastic Image Search
+# Flickr Elastic Image Search Based on tags
 
 This project sets up a development environment for searching images from the Flickr Creative Commons dataset using Elasticsearch, Kibana, and Logstash. This configuration is intended for development purposes only and does not include authentication parameters suitable for production use.
 
